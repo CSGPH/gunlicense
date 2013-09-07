@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
 
+gem 'devise'
+
 group :doc do
   gem 'sdoc', require: false
 end
