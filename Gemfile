@@ -8,12 +8,10 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
-
+gem "therubyracer"  
 gem 'devise'
 
-group :assets do
-  gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
-end
+gem 'bootstrap-sass', '~> 2.3.2.2'
 
 group :doc do
   gem 'sdoc', require: false
