@@ -11,6 +11,10 @@ gem 'haml-rails'
 
 gem 'devise'
 
+group :assets do
+  gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
+end
+
 group :doc do
   gem 'sdoc', require: false
 end
