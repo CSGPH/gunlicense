@@ -9,7 +9,7 @@
   %body
     %p.notice= notice
     %p.alert=  alert
+    .container
+      = render "shared/login_items"
 
-    = render "shared/login_items"
-
-    = yield
+      = yield
