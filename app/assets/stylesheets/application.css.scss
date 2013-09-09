@@ -10,11 +10,12 @@
  *
  *= require_self
  *= require style
+ *= require font-awesome-ie7.min
 
  */
 body{
   padding-top: 40px
 }
- @import "bootstrap";
- @import "bootstrap-responsive";
-
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import "font-awesome";
