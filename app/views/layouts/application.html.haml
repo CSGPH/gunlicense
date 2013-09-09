@@ -7,9 +7,12 @@
     = csrf_meta_tags
 
   %body
-    %p.notice= notice
-    %p.alert=  alert
+    
+    = render "shared/header"
 
-    = render "shared/login_items"
+    .container
+      %p.notice= notice
+      %p.alert=  alert
+      = render "shared/login_items"
 
-    = yield
+      = yield
