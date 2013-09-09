@@ -12,7 +12,7 @@ gem "therubyracer"
 gem 'devise'
 
 gem 'bootstrap-sass', '~> 2.3.2.2'
-
+gem "font-awesome-rails"
 group :doc do
   gem 'sdoc', require: false
 end
