@@ -24,11 +24,21 @@ class User < ActiveRecord::Base
     spreadsheet = open_spreadsheet(file)
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).each do |i|
-      row          = Hash[[header, spreadsheet.row(i)].transpose]
-      user         = find_by_name(row["FIREARMS HOLDER"]) || new
-      user.address = row["ADDRESS"]
+      row           = Hash[[header, spreadsheet.row(i)].transpose]
+      user          = find_by_name(row["FIREARMS HOLDER"]) || new
+      user.name     = row["FIREARMS HOLDER"]
+      user.username = user.generate_username
+      user.address  = row["ADDRESS"]
       user.save
     end
+  end
+
+  def email_required?
+    false
+  end
+
+  def generate_username
+    spread = name.split(",")
   end
 
   private
