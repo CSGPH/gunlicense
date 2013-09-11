@@ -2,6 +2,9 @@ class GunOwner < ActiveRecord::Base
   has_one :user
   has_many :guns
 
+  geocoded_by :address
+  after_validation :geocode
+
   class << self
     def import(file)
       spreadsheet = open_spreadsheet(file)
@@ -27,6 +30,8 @@ class GunOwner < ActiveRecord::Base
         gun.issued_date   = row["ISSUED DATE"]
         gun.expiry_date   = row["EXPIRY DATE"]
         gun.save
+
+        sleep 0.25
       end
     end
   end
