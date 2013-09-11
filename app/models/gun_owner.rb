@@ -16,10 +16,10 @@ class GunOwner < ActiveRecord::Base
         user.region   = row["REGION"]
         user.save
 
-        serial_number     = row["SERIAL_NUMBER"].to_s.gsub(".0","").strip
-        gun               = Gun.find_by_serial_number(serial_number) || Gun.new
+        snum              = row["SERIAL NUMBER"].to_s.gsub(".0","").strip
+        gun               = Gun.find_by_serial_number(snum) || Gun.new
         gun.gun_owner     = user
-        gun.serial_number = serial_number
+        gun.serial_number = snum
         gun.kind          = row["KIND"].to_s.strip
         gun.make          = row["MAKE"].to_s.strip
         gun.caliber       = row["CALIBER"].to_s.strip

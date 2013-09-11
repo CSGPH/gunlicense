@@ -19,6 +19,8 @@ gem 'delayed_job_active_record'
 gem 'roo'
 gem 'rubyzip', '< 1.0.0'
 
+gem 'will_paginate', '~> 3.0'
+
 group :doc do
   gem 'sdoc', require: false
 end
