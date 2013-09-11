@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911135846) do
+ActiveRecord::Schema.define(version: 20130911141922) do
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -38,6 +38,21 @@ ActiveRecord::Schema.define(version: 20130911135846) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "guns", force: true do |t|
+    t.string   "serial_number"
+    t.string   "kind"
+    t.string   "make"
+    t.string   "caliber"
+    t.string   "model"
+    t.date     "issued_date"
+    t.date     "expiry_date"
+    t.integer  "gun_owner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "guns", ["gun_owner_id"], name: "index_guns_on_gun_owner_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

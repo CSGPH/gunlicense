@@ -1,5 +1,6 @@
 class GunOwner < ActiveRecord::Base
   has_one :user
+  has_many :guns
 
   class << self
     def import(file)
