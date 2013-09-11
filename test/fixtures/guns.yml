@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  serial_number: MyString
+  kind: MyString
+  make: MyString
+  caliber: MyString
+  model: MyString
+  issued_date: 2013-09-11
+  expiry_date: 2013-09-11
+  gun_owner_id: 1
+
+two:
+  serial_number: MyString
+  kind: MyString
+  make: MyString
+  caliber: MyString
+  model: MyString
+  issued_date: 2013-09-11
+  expiry_date: 2013-09-11
+  gun_owner_id: 1
