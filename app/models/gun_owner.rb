@@ -1,15 +1,20 @@
 class GunOwner < ActiveRecord::Base
   has_one :user
 
-  def self.import(file)
-    spreadsheet = open_spreadsheet(file)
-    header = spreadsheet.row(1)
-    (2..spreadsheet.last_row).each do |i|
-      row           = Hash[[header, spreadsheet.row(i)].transpose]
-      user          = find_by_name(row["FIREARMS HOLDER"].strip) || new
-      user.name     = row["FIREARMS HOLDER"].strip
-      user.address  = row["ADDRESS"].strip
-      user.save
+  class << self
+    def import(file)
+      spreadsheet = open_spreadsheet(file)
+      header = spreadsheet.row(1)
+      (2..spreadsheet.last_row).each do |i|
+        row           = Hash[[header, spreadsheet.row(i)].transpose]
+        user          = find_by_name(row["FIREARMS HOLDER"].strip) || new
+        user.name     = row["FIREARMS HOLDER"].strip
+        user.address  = row["ADDRESS"].strip
+        user.city     = row["CITY/MUNICIPALITY"].strip
+        user.province = row["PROVINCE"].strip
+        user.region   = row["REGION"]
+        user.save
+      end
     end
   end
 
