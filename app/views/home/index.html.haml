@@ -62,35 +62,17 @@
           %th
             Gun
           %th
+            Serial Number
+          %th
+            Date Issued
+          %th
             Expiry date
       %tbody
-        %tr
-          %td
-            %strong
-              Jeremie Michaels Lim
-          %td
-            PSTL SWSN 40 MSW99
-          %td
-            December 29, 2013
-          %td.span1
-        %tr
-          %td
-            %strong
-              Jeremie Michaels Lim
-          %td
-            PSTL SWSN 40 MSW99
-          %td
-            December 29, 2013
-          %td.span1
-        %tr
-          %td
-            %strong
-              Jeremie Michaels Lim
-
-          %td
-            PSTL SWSN 40 MSW99
-          %td
-            December 29, 2013
-          %td.span1
-            %span.label.label-important
-              expired
+        - @guns.each do |g|
+          %tr
+            %td
+              %strong= g.gun_owner.name
+            %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
+            %td= g.serial_number
+            %td= g.issued_date
+            %td= g.expiry_date
