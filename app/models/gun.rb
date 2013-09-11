@@ -1,3 +1,3 @@
 class Gun < ActiveRecord::Base
-  belongs_to :gun_owner
+  belongs_to :gun_owner, :dependent => :delete
 end
