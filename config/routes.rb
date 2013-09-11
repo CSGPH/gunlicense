@@ -3,7 +3,7 @@ Gunlicense::Application.routes.draw do
 
   root 'home#index'
 
-  resources :users do
+  resources :gun_owners do
     collection do
       post :import
       get  :upload

@@ -4,23 +4,15 @@
     = devise_error_messages!
     %fieldset
       = f.label :email
-      
       = f.email_field :email, :autofocus => true
     %fieldset
       = f.label :username
-      
       = f.text_field :username
     %fieldset
-      = f.label :mobile_number
-      
-      = f.text_field :mobile_number
-    %fieldset
       = f.label :password
-      
       = f.password_field :password
     %fieldset
       = f.label :password_confirmation
-      
       = f.password_field :password_confirmation
     %fieldset
       = f.submit "Sign up", :class => "btn"

@@ -1,0 +1,36 @@
+class GunOwner < ActiveRecord::Base
+  has_one :user
+
+  def self.import(file)
+    spreadsheet = open_spreadsheet(file)
+    header = spreadsheet.row(1)
+    (2..spreadsheet.last_row).each do |i|
+      row           = Hash[[header, spreadsheet.row(i)].transpose]
+      user          = find_by_name(row["FIREARMS HOLDER"].strip) || new
+      user.name     = row["FIREARMS HOLDER"].strip
+      user.address  = row["ADDRESS"].strip
+      user.save
+    end
+  end
+
+  def generate_username(q)
+    if ["BUSINESS", "SECURITY AGENCY"].include? q
+      name.downcase.gsub(" ", "")
+    else
+      spread   = name.split(",")
+      initials = name.last.split(" ").map { |i| i[0,1] }.join(" ").gsub(" ","")
+      "#{initials}#{spread.first}"
+    end
+  end
+
+  private
+
+  def self.open_spreadsheet(file)
+    case File.extname(file.original_filename)
+    when '.csv' then Roo::Csv.new(file.path, nil, :ignore)
+    when '.xls' then Roo::Excel.new(file.path, nil, :ignore)
+    when '.xlsx' then Roo::Excelx.new(file.path, nil, :ignore)
+    else raise "Unknown file type: #{file.original_filename}"
+    end
+  end
+end
