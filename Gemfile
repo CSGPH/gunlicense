@@ -17,6 +17,7 @@ gem 'roo'
 gem 'rubyzip', '< 1.0.0'
 gem 'will_paginate', '~> 3.0'
 gem 'geocoder'
+gem 'thin'
 
 group :doc do
   gem 'sdoc', require: false
