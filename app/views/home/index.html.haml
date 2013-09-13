@@ -31,7 +31,7 @@
             %i.icon-print
           %a.btn
             %i.icon-external-link
-  / %iframe{:frameborder => "0", :height => "400", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=restaurants+in+cebu&aq=&sll=37.0625,-95.677068&sspn=44.25371,81.386719&ie=UTF8&hq=restaurants&hnear=Cebu+City,+Cebu,+Central+Visayas,+Philippines&t=m&fll=10.331976,123.908443&fspn=0.053956,0.079479&st=109146043351405611748&rq=1&ev=zi&split=1&ll=10.337612,123.896724&spn=0.053956,0.079479&output=embed", :width => "100%"}
+  %iframe{:frameborder => "0", :height => "400", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=restaurants+in+cebu&aq=&sll=37.0625,-95.677068&sspn=44.25371,81.386719&ie=UTF8&hq=restaurants&hnear=Cebu+City,+Cebu,+Central+Visayas,+Philippines&t=m&fll=10.331976,123.908443&fspn=0.053956,0.079479&st=109146043351405611748&rq=1&ev=zi&split=1&ll=10.337612,123.896724&spn=0.053956,0.079479&output=embed", :width => "100%"}
 
 .main-stats
   .container
@@ -54,25 +54,30 @@
 
 .container
   .row
-    %table.table.table-hover.user-table-list
-      %thead
-        %tr
-          %th
-            Name
-          %th
-            Gun
-          %th
-            Serial Number
-          %th
-            Date Issued
-          %th
-            Expiry date
-      %tbody
-        - @guns.each do |g|
+    .span12
+      
+      = will_paginate @guns
+      %table.table.table-hover.user-table-list
+        %thead
           %tr
-            %td
-              %strong= g.gun_owner.name
-            %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
-            %td= g.serial_number
-            %td= g.issued_date
-            %td= g.expiry_date
+            %th
+              Name
+            %th
+              Gun
+            %th
+              Serial Number
+            %th
+              Date Issued
+            %th
+              Expiry date
+        %tbody
+          - @guns.each do |g|
+            %tr
+              %td
+                %strong= g.gun_owner.name
+              %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
+              %td= g.serial_number
+              %td= g.issued_date
+              %td= g.expiry_date
+      
+      = will_paginate @guns

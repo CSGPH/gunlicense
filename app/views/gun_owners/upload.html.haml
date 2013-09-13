@@ -1,4 +1,7 @@
-%h2 Import Users
-= form_tag import_gun_owners_path, multipart: true do
-  = file_field_tag :file
-  = submit_tag "Import"
+.container
+  .row
+    .span12
+      %h2 Import Users
+      = form_tag import_gun_owners_path, multipart: true do
+        = file_field_tag :file
+        = submit_tag "Import"
