@@ -33,11 +33,28 @@
   h3
     margin-top: 0
 .user-table-list
-  margin-top: 30px
   td
-
     padding: 10px
 
-
+.pagination
+  > em,a
+    display: inline-block
+    padding: 5px
+    min-width: 17px
+    text-align: center
+  > a
+    border: 2px solid #e1e1e1
+    border-radius: 3px
+    text-decoration: none
+    -webkit-transition: all .2s
+    -moz-transition: all .2s
+    -ms-transition: all .2s
+    -o-transition: all .2s
+    transition: all .2s
+    &:hover
+      background-color: #f1f1f1
+      border-color: #f1f1f1
+  .disabled
+    color: #999
 
 @import "layout"
