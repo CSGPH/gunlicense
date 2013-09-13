@@ -54,25 +54,26 @@
 
 .container
   .row
-    %table.table.table-hover.user-table-list
-      %thead
-        %tr
-          %th
-            Name
-          %th
-            Gun
-          %th
-            Serial Number
-          %th
-            Date Issued
-          %th
-            Expiry date
-      %tbody
-        - @guns.each do |g|
+    .span12
+      %table.table.table-hover.user-table-list
+        %thead
           %tr
-            %td
-              %strong= g.gun_owner.name
-            %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
-            %td= g.serial_number
-            %td= g.issued_date
-            %td= g.expiry_date
+            %th
+              Name
+            %th
+              Gun
+            %th
+              Serial Number
+            %th
+              Date Issued
+            %th
+              Expiry date
+        %tbody
+          - @guns.each do |g|
+            %tr
+              %td
+                %strong= g.gun_owner.name
+              %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
+              %td= g.serial_number
+              %td= g.issued_date
+              %td= g.expiry_date
