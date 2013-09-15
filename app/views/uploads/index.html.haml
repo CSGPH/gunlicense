@@ -1,0 +1,2 @@
+- @uploads.each do |u|
+  %p= link_to u.sheet_file_name, u.sheet.url(:original, false)

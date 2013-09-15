@@ -1,0 +1,3 @@
+= form_for @upload,  :url => uploads_path, :html => { :multipart => true } do |f|
+  = f.file_field :sheet
+  = f.submit
