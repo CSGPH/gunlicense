@@ -32,8 +32,10 @@ end
 # pagination
 gem 'will_paginate', '~> 3.0'
 
-# geocode
+# geocode & maps
 gem 'geocoder'
+gem 'gmaps4rails'
+
 
 # jobs
 gem 'sidekiq'

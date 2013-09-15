@@ -7,10 +7,11 @@
     = csrf_meta_tags
 
   %body
-    
     = render "shared/header"
 
-    
-    / %p.notice= notice
-    / %p.alert=  alert
+    /%p.notice= notice
+    /%p.alert=  alert
+
     = yield
+
+    = yield :scripts
