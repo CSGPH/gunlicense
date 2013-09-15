@@ -2,8 +2,10 @@ class GunOwner < ActiveRecord::Base
   has_one :user
   has_many :guns
 
-  geocoded_by :address
+  geocoded_by :full_address
   after_validation :geocode
+
+  acts_as_gmappable :process_geocoding => false
 
   def self.import(file)
     spreadsheet = open_spreadsheet(file)
@@ -42,6 +44,10 @@ class GunOwner < ActiveRecord::Base
       initials = name.last.split(" ").map { |i| i[0,1] }.join(" ").gsub(" ","")
       "#{initials}#{spread.first}"
     end
+  end
+
+  def full_address
+    "#{self.address} #{self.city}"
   end
 
   private
