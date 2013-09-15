@@ -5,15 +5,12 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand
-        GLIDE
+      = link_to "GLIDE", root_url, :class => "brand"
       .nav-collapse.collapse
         %ul.nav
-          %li
-            %a
-              Home
+          %li= link_to "Home", root_url
         %ul.nav.pull-right
-          %li= link_to "Upload", upload_gun_owners_path
+          %li= link_to "Upload", new_upload_path
           %li
             - if user_signed_in?
               = link_to "Logout", destroy_user_session_path, :method => :delete

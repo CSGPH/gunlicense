@@ -3,10 +3,9 @@ Gunlicense::Application.routes.draw do
 
   root 'home#index'
 
-  resources :gun_owners do
-    collection do
-      post :import
-      get  :upload
-    end
-  end
+  resources :gun_owners
+  resources :uploads
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end

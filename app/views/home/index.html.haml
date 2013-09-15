@@ -55,8 +55,8 @@
 .container
   .row
     .span12
-      
       = will_paginate @guns
+
       %table.table.table-hover.user-table-list
         %thead
           %tr
@@ -79,5 +79,5 @@
               %td= g.serial_number
               %td= g.issued_date
               %td= g.expiry_date
-      
+
       = will_paginate @guns

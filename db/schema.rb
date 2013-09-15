@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911152558) do
+ActiveRecord::Schema.define(version: 20130915140955) do
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 20130911152558) do
   end
 
   add_index "guns", ["gun_owner_id"], name: "index_guns_on_gun_owner_id", using: :btree
+
+  create_table "uploads", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "sheet_file_name"
+    t.string   "sheet_content_type"
+    t.integer  "sheet_file_size"
+    t.datetime "sheet_updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
