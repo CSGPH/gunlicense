@@ -39,7 +39,7 @@
         %strong
           5,343
         gun owners
-      
+
       .span4
         %strong
           42
@@ -59,7 +59,6 @@
               Kind / Make / Model
             %th
               Serial Number
-            
             %th
               Expiry date
         %tbody
@@ -70,7 +69,7 @@
               %div
                 %small
                   17 MICHELIA ST NORTH TOWNHMS NASIPIT TALAMBAN
-           
+
             %td
               PISTL NORIN 9MM NZ75
             %td
@@ -80,21 +79,15 @@
               %i.icon-warning-sign.icon-warning
               2003-02-03
 
-
-
-
           - @guns.each do |g|
             %tr
               %td.span8
-                %strong= g.gun_owner.name
+                %strong= link_to g.gun_owner.name, gun_owner(g)
                 %div
                   %small
                     = g.gun_owner.address
               %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
-                
               %td= g.serial_number
-              / %td= g.issued_date
-              
               %td= g.expiry_date
 
 
