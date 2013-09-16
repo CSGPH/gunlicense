@@ -1,3 +1,10 @@
-= form_for @upload,  :url => uploads_path, :html => { :multipart => true } do |f|
-  = f.file_field :sheet
-  = f.submit
+.container
+  .row
+    .span12
+      .well{ :style => "margin-top: 20px; display: inline-block" }
+        %h3
+          Upload .xls
+        .form{ :style => "margin-top: 20px" }
+          = form_for @upload,  :url => uploads_path, :html => { :multipart => true } do |f|
+            = f.file_field :sheet
+            = f.submit
