@@ -1,36 +1,31 @@
 .map-container
   .main-control-group.fixed.clearfix
     .container
-      %form.form-inline
-        %fieldset
-          %label
-            Select area
-          %select
-            %option{ :selected => "selected" }
-              All Areas
-            %option
-              Cebu City
-            %option
-              Toledo
-            %option
-              Naga
-            %option
-              Carcar
-        %fieldset
-          %label
-            Expiring in:
-          %select
-            %option{ :selected => "selected" }
-              30 days
-            %option
-              2 months
-            %option
-              6 months
-        %fieldset.pull-right.main-control-actions
-          %a.btn
-            %i.icon-print
-          %a.btn
-            %i.icon-external-link
+      .row
+        %form.form-inline
+          %fieldset
+            %label
+              Select area
+            %select
+              %option{ :selected => "selected" }
+                All Areas
+              %option
+                Cebu City
+              %option
+                Toledo
+              %option
+                Naga
+              %option
+                Carcar
+          %fieldset
+            .form-search
+              = label_tag(:search_key, "Search")
+              = text_field_tag(:search_key, '' , :placeholder => "Name, Serial number")
+          %fieldset.pull-right.main-control-actions
+            %a.btn
+              %i.icon-print
+            %a.btn
+              %i.icon-external-link
 
   = gmaps4rails(@json)
 
@@ -44,10 +39,7 @@
         %strong
           5,343
         gun owners
-      .span4
-        %strong
-          324
-        expiring in 30 days
+      
       .span4
         %strong
           42
@@ -61,24 +53,49 @@
       %table.table.table-hover.user-table-list
         %thead
           %tr
-            %th
+            %th.span8
               Name
             %th
-              Gun
+              Kind / Make / Model
             %th
               Serial Number
-            %th
-              Date Issued
+            
             %th
               Expiry date
         %tbody
+          %tr.warning
+            %td.span8
+              %strong
+                ENRILE, RENE HARVEY
+              %div
+                %small
+                  17 MICHELIA ST NORTH TOWNHMS NASIPIT TALAMBAN
+           
+            %td
+              PISTL NORIN 9MM NZ75
+            %td
+              343FDDS
+            %td
+              / add this icon for expired guns
+              %i.icon-warning-sign.icon-warning
+              2003-02-03
+
+
+
+
           - @guns.each do |g|
             %tr
-              %td
+              %td.span8
                 %strong= g.gun_owner.name
+                %div
+                  %small
+                    = g.gun_owner.address
               %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
+                
               %td= g.serial_number
-              %td= g.issued_date
+              / %td= g.issued_date
+              
               %td= g.expiry_date
+
 
       = will_paginate @guns
