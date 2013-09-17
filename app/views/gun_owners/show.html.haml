@@ -1,0 +1,79 @@
+.container
+  .row
+    .span12
+      %ul.breadcrumb
+        %li
+          = link_to "Home", root_url
+            
+          
+          %span.divider
+            \/
+        %li.active
+          = @gun_owner.name
+
+.content
+  .container
+    .row
+      .span12
+        .image-upload-form.pull-left
+          .profile-image
+            %img
+          .profile-image-actions
+            %a
+              change
+        %ul.user-info.pull-left
+          %li
+            %strong
+              = @gun_owner.name
+          %li
+            #{@gun_owner.address}, #{@gun_owner.city}
+          %li
+            %span.label.label-success
+              Private Employee
+.content
+  = @json
+  .map-container
+    = gmaps4rails(@json)
+  .container
+    .row
+      .span12
+        %table.table.table-hover
+          %thead 
+            %tr 
+              %th 
+                Kind / Make / Model
+              %th 
+                Serial #
+              %th 
+                Date Issued
+              %th 
+                Expiry Date
+              
+              
+          %tbody
+            %tr
+              %td 
+                %strong
+                  %a
+                    PSTL / SWSN / 40 / MSW99
+              %td 
+                SAF239949
+              %td 
+                October 12, 2001
+              %td 
+                September 12, 2012
+            %tr
+              %td 
+                %strong
+                  %a
+                    PSTL / SWSN / 40 / MSW99
+              %td 
+                SAF239949
+              %td 
+                October 12, 2001
+              %td 
+                September 12, 2012
+      
+
+
+
