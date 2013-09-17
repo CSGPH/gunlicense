@@ -1,0 +1,48 @@
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 2, app/assets/stylesheets/layout.css.sass */
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+
+  /* line 5, app/assets/stylesheets/layout.css.sass */
+  .main-control-group.fixed {
+    position: static;
+    top: 51px;
+    left: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  /* line 13, app/assets/stylesheets/layout.css.sass */
+  .main-control-group fieldset {
+    margin-bottom: 10px;
+  }
+  /* line 15, app/assets/stylesheets/layout.css.sass */
+  .main-control-group fieldset:last-child {
+    margin-bottom: 0;
+  }
+
+  /* line 17, app/assets/stylesheets/layout.css.sass */
+  .main-stats {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* line 20, app/assets/stylesheets/layout.css.sass */
+  fieldset.main-control-actions {
+    display: none;
+  }
+
+  /* line 23, app/assets/stylesheets/layout.css.sass */
+  .main-control-group.fixed {
+    position: static;
+    top: 51px;
+    left: 0;
+    width: 100%;
+  }
+
+  /* line 28, app/assets/stylesheets/layout.css.sass */
+  .pagination > a {
+    margin-bottom: 3px;
+  }
+}
