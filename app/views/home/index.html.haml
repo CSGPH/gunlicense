@@ -2,30 +2,31 @@
   .main-control-group.fixed.clearfix
     .container
       .row
-        %form.form-inline
-          %fieldset
-            %label
-              Select area
-            %select
-              %option{ :selected => "selected" }
-                All Areas
-              %option
-                Cebu City
-              %option
-                Toledo
-              %option
-                Naga
-              %option
-                Carcar
-          %fieldset
-            .form-search
-              = label_tag(:search_key, "Search")
-              = text_field_tag(:search_key, '' , :placeholder => "Name, Serial number")
-          %fieldset.pull-right.main-control-actions
-            %a.btn
-              %i.icon-print
-            %a.btn
-              %i.icon-external-link
+        .span12
+          %form.form-inline
+            %fieldset
+              %label
+                Select area
+              %select
+                %option{ :selected => "selected" }
+                  All Areas
+                %option
+                  Cebu City
+                %option
+                  Toledo
+                %option
+                  Naga
+                %option
+                  Carcar
+            %fieldset
+              .form-search
+                = label_tag(:search_key, "Search")
+                = text_field_tag(:search_key, '' , :placeholder => "Name, Serial number")
+            %fieldset.pull-right.main-control-actions
+              %a.btn
+                %i.icon-print
+              %a.btn
+                %i.icon-external-link
 
   = gmaps4rails(@json)
 
@@ -82,7 +83,8 @@
           - @guns.each do |g|
             %tr
               %td.span8
-                %strong= link_to g.gun_owner.name, gun_owner(g)
+                %strong
+                  = link_to g.gun_owner.name, gun_owner_path(g)
                 %div
                   %small
                     = g.gun_owner.address
