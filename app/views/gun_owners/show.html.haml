@@ -51,25 +51,18 @@
 
 
           %tbody
-            %tr
-              %td
-                %strong
+            - @guns.each do |gun|
+              %tr
+                %td
+                  %strong
+                    %a
+                      #{gun.kind} #{gun.make} #{gun.caliber} #{gun.model}
+                %td
+                  #{ gun.serial_number }
+                %td
+                  #{gun.issued_date}
+                %td
+                  #{gun.expiry_date}
+                %td
                   %a
-                    PSTL / SWSN / 40 / MSW99
-              %td
-                SAF239949
-              %td
-                October 12, 2001
-              %td
-                September 12, 2012
-            %tr
-              %td
-                %strong
-                  %a
-                    PSTL / SWSN / 40 / MSW99
-              %td
-                SAF239949
-              %td
-                October 12, 2001
-              %td
-                September 12, 2012
+                    Edit
