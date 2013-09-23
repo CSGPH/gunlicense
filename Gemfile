@@ -3,8 +3,15 @@ source 'https://rubygems.org'
 # essential
 gem 'rails', '4.0.0'
 gem 'mysql2'
-gem 'thin'
 gem 'sqlite3'
+
+group :development do
+  gem 'thin'
+end
+
+group :production do
+  gem 'unicorn'
+end
 
 # assets
 gem 'sass-rails', '~> 4.0.0'
