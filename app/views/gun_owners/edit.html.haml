@@ -1,0 +1,20 @@
+.container
+  .row
+    .span12
+      %ul.breadcrumb
+        %li
+          = link_to "Home", root_url
+          %span.divider
+            \/
+        %li
+          = link_to @gun_owner.name, gun_owner_path(@gun_owner)
+          %span.divider
+            \/
+        %Li.active
+          Edit
+.content
+  .container 
+    .row 
+      .span12 
+        
+        = render 'form'
