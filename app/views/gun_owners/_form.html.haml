@@ -1,0 +1,23 @@
+%h3
+
+  Update user
+- if @gun_owner.errors.any?
+  = pluralize(@gun_owner.errors.count, 'error')
+  = @gun_owner.errors.full_messages.each do |msg|
+    = msg
+= form_for @gun_owner do |f|
+  / %fieldset
+  /   = label_tag(:picture, 'Photo')
+  /   = file_field_tag(:picture)
+  %fieldset
+    = f.label :name
+    = f.text_field :name, :class => "input-xxlarge"
+  %fieldset
+    = f.label :address
+    = f.text_field :address, :class => "input-xxlarge"
+    .muted
+      %small
+        House #, Street, Baranggay, City
+  
+  %fieldset
+    = f.submit "Save", :class => "btn btn-primary"
