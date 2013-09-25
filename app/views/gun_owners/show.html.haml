@@ -4,8 +4,6 @@
       %ul.breadcrumb
         %li
           = link_to "Home", root_url
-
-
           %span.divider
             \/
         %li.active
@@ -33,9 +31,8 @@
           %li
             = link_to "Edit", edit_gun_owner_path(@gun_owner)
 .content
-  = @json
   .map-container
-    map here
+    = gmaps4rails(@json)
   .container
     .row
       .span12
@@ -50,7 +47,6 @@
                 Date Issued
               %th
                 Expiry Date
-
 
           %tbody
             - @guns.each do |gun|
