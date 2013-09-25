@@ -50,6 +50,17 @@ class GunOwner < ActiveRecord::Base
     "#{self.address} #{self.city}"
   end
 
+  def gmaps4rails_infowindow
+    "<p>Name: #{name}</p>" +
+    "<p>Address: #{full_address}</p>" +
+    "<p>Guns Listed: #{gun_count}</p>" +
+    "<a href=\"/gun_owners/#{id}\"> More Info</a>"
+  end
+
+  def gun_count
+    guns.count
+  end
+
   private
 
   def self.open_spreadsheet(file)
