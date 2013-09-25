@@ -36,16 +36,6 @@ class GunOwner < ActiveRecord::Base
     end
   end
 
-  def generate_username(q)
-    if ["BUSINESS", "SECURITY AGENCY"].include? q
-      name.downcase.gsub(" ", "")
-    else
-      spread   = name.split(",")
-      initials = name.last.split(" ").map { |i| i[0,1] }.join(" ").gsub(" ","")
-      "#{initials}#{spread.first}"
-    end
-  end
-
   def full_address
     "#{self.address} #{self.city}"
   end
@@ -59,6 +49,10 @@ class GunOwner < ActiveRecord::Base
 
   def gun_count
     guns.count
+  end
+
+  def self.unmapped_addresses
+    where(:latitude => nil, :longitude => nil)
   end
 
   private
