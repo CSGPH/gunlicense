@@ -43,7 +43,9 @@ gem 'will_paginate', '~> 3.0'
 gem 'geocoder'
 gem 'gmaps4rails'
 
-
 # jobs
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', :require => nil
+
+# SMS
+gem 'nexmo'

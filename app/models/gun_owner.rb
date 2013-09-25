@@ -36,6 +36,10 @@ class GunOwner < ActiveRecord::Base
     end
   end
 
+  def self.unmapped_addresses
+    where(:latitude => nil, :longitude => nil)
+  end
+
   def full_address
     "#{self.address} #{self.city}"
   end
@@ -51,8 +55,8 @@ class GunOwner < ActiveRecord::Base
     guns.count
   end
 
-  def self.unmapped_addresses
-    where(:latitude => nil, :longitude => nil)
+  def notify_expired!
+    SMS.send_message!({:to => mobile_number, :from => "CSG", :text => "Your firearm license is expired!"})
   end
 
   private
