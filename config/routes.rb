@@ -3,6 +3,8 @@ Gunlicense::Application.routes.draw do
 
   root 'home#index'
 
+  get 'unmapped_addresses', :controller => :home, :action => :unmapped_addresses
+
   resources :gun_owners
   resources :uploads
 
