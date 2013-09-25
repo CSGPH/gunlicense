@@ -48,7 +48,7 @@
 
       .span4
         %strong
-          ??
+          = Gun.expired.count
         expired licenses
 
 .container
@@ -68,34 +68,20 @@
             %th
               Expiry date
         %tbody
-          / %tr.warning
-          /   %td.span8
-          /     %strong
-          /       ENRILE, RENE HARVEY
-          /     %div
-          /       %small
-          /         17 MICHELIA ST NORTH TOWNHMS NASIPIT TALAMBAN
-
-          /   %td
-          /     PISTL NORIN 9MM NZ75
-          /   %td
-          /     343FDDS
-          /   %td
-          /     / add this icon for expired guns
-          /     %i.icon-warning-sign.icon-warning
-          /     2003-02-03
-
           - @guns.each do |g|
-            %tr
+            %tr{ :class => "#{"warning" if g.expired?}" }
               %td.span8
                 %strong
                   = link_to g.gun_owner.name, gun_owner_path(g.gun_owner)
                 %div
                   %small
-                    = g.gun_owner.address
+                    #{g.gun_owner.address}, #{g.gun_owner.city}
               %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
               %td= g.serial_number
-              %td= g.expiry_date
+              %td
+                - if g.expired?
+                  %i.icon-warning-sign.icon-warning
+                = g.expiry_date
 
 
       = will_paginate @guns
