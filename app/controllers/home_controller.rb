@@ -5,6 +5,6 @@ class HomeController < ApplicationController
   end
 
   def unmapped_addresses
-    @gun_owners = GunOwner.unmapped_addresses
+    @gun_owners = GunOwner.unmapped_addresses.paginate(:page => params[:page])
   end
 end
