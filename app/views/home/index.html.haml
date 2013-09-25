@@ -35,15 +35,20 @@
     .row
       .span12
         %h3
-          Cebu City
+          Statistics
       .span4
         %strong
-          5,343
+          = GunOwner.count
         gun owners
 
       .span4
         %strong
-          42
+          = @guns.count
+        firearms registered
+
+      .span4
+        %strong
+          ??
         expired licenses
 
 .container
