@@ -1,9 +1,13 @@
+@import "http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic"
+$baseFontFamily: 'Noto Sans', sans-serif
+$buttonPrimaryColor: #3c8bc8
 h1,h2,h3,h4,h5
   font-weight: 500
-  
+
 body
   color: $textColor
-  
+  font-family: $baseFontFamily
+  font-size: 16px
 a
   cursor: pointer
 input[type=text],input[type=email],input[type=password]
@@ -15,3 +19,15 @@ select
   &:active, &:focus
     outline: none
     box-shadow: none
+.form
+  fieldset
+    margin: 10px 0
+.form-large
+  input, button
+    font-size: 18px
+    padding: 7px
+.hero-unit
+  background-color: #60B5D6
+  color: #fff
+
+    
