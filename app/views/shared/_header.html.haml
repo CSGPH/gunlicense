@@ -9,10 +9,10 @@
       .nav-collapse.collapse
         - if current_user
           %ul.nav
-            %li= link_to "Home", root_url
+            %li= link_to "Home", admin_dashboard_path
           %ul.nav.pull-right
-            %li= link_to "Upload", new_upload_path
-            %li= link_to "Unmapped Addresses", unmapped_addresses_path
+            %li= link_to "Upload", new_admin_upload_path
+            %li= link_to "Unmapped Addresses", unmapped_addresses_admin_dashboard_path
             %li
               - if user_signed_in?
                 = link_to "Logout", destroy_user_session_path, :method => :delete

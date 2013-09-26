@@ -1,4 +1,4 @@
-class UploadsController < ApplicationController
+class Admin::UploadsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
