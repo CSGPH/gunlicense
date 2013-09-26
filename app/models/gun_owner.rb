@@ -1,5 +1,4 @@
 class GunOwner < ActiveRecord::Base
-  has_one :user
   has_many :guns
 
   geocoded_by :full_address
@@ -57,6 +56,15 @@ class GunOwner < ActiveRecord::Base
 
   def notify_expired!
     SMS.send_message!({:to => mobile_number, :from => "CSG", :text => "Your firearm license is expired!"})
+  end
+
+  def authenticate(serial_number)
+    gun = Gun.find_by_serial_number(serial_number)
+    unless gun.nil?
+      gun.gun_owner
+    else
+      nil
+    end
   end
 
   private

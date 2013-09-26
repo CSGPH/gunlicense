@@ -1,4 +1,6 @@
-class GunOwnersController < ApplicationController
+class Admin::GunOwnersController < ApplicationController
+  before_filter :authenticate_user!
+
   def show
     @gun_owner = GunOwner.find(params[:id])
     @guns = @gun_owner.guns
