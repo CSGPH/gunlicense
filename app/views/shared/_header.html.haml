@@ -6,9 +6,7 @@
           = link_to "F.A.L.", root_url
     %ul.menu.right
       - if current_user
-
         %li= link_to "Home", admin_dashboard_path
-
         %li= link_to "Upload", new_admin_upload_path
         %li= link_to "Unmapped Addresses", unmapped_addresses_admin_dashboard_path
         %li
