@@ -72,7 +72,7 @@
             %tr{ :class => "#{"warning" if g.expired?}" }
               %td.span8
                 %strong
-                  = link_to g.gun_owner.name, gun_owner_path(g.gun_owner)
+                  = link_to g.gun_owner.name, admin_gun_owner_path(g.gun_owner)
                 %div
                   %small= g.gun_owner.full_address
               %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
