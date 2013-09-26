@@ -1,5 +1,4 @@
 class GunOwner < ActiveRecord::Base
-  has_one :user
   has_many :guns
 
   geocoded_by :full_address

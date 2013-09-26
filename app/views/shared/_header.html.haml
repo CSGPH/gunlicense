@@ -7,13 +7,14 @@
         %span.icon-bar
       = link_to "GLIDE", root_url, :class => "brand"
       .nav-collapse.collapse
-        %ul.nav
-          %li= link_to "Home", root_url
-        %ul.nav.pull-right
-          %li= link_to "Upload", new_upload_path
-          %li= link_to "Unmapped Addresses", unmapped_addresses_path
-          %li
-            - if user_signed_in?
-              = link_to "Logout", destroy_user_session_path, :method => :delete
-            - else
-              = link_to "Login", new_user_session_path
+        - if current_user
+          %ul.nav
+            %li= link_to "Home", root_url
+          %ul.nav.pull-right
+            %li= link_to "Upload", new_upload_path
+            %li= link_to "Unmapped Addresses", unmapped_addresses_path
+            %li
+              - if user_signed_in?
+                = link_to "Logout", destroy_user_session_path, :method => :delete
+              - else
+                = link_to "Login", new_user_session_path
