@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
 gem 'therubyracer'
 # gem 'bootstrap-sass', '~> 2.3.2.2'
-# gem 'font-awesome-rails'
+gem 'font-awesome-rails'
 gem "semantic-ui-rails", "~> 0.0.2.1"
 
 # login

@@ -1,6 +1,7 @@
 @import 'partials/skeleton'
 @import 'partials/buttons'
 @import 'partials/forms'
+@import 'font-awesome'
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
   margin: 0
   padding: 0
@@ -56,7 +57,8 @@ h1
   font-size: 48px
   line-height: 1
   margin: 0 0 10px 0
-
+h3
+  font-size: 18px
 .hero-unit
   background-color: #4fafd7
   padding: 60px 0
@@ -101,8 +103,12 @@ h1
 .main-control-group
   background-color: #f5f5f5
   padding: 15px 0
-  h3
-    font-size: 18px
+  &.small
+    padding: 5px 0
+.user-info
+  li
+    margin: 7px 0
+  
 .pagination
   margin: 10px 0
   > span, em, a
@@ -122,10 +128,38 @@ h1
       border-bottom-left-radius: 3px
   .disabled
     color: #ccc
-  .current
-    
+.profile-group
+  padding: 20px 0
+.breadcrumb
+  padding: 10px
+  li
+    margin: 0 5px
+    display: inline-block
+  .icon-caret-right 
+    color: #999
+.image-upload-group
+  float: left
+  text-align: center
+  margin-right: 20px
+  .profile-image
+    border: 1px solid #e1e1e1
+    width: 125px
+    height: 125px
 
-
-
+.label
+  display: inline-block
+  background: #e1e1e1
+  padding: 1px 7px
+  text-shadow: 0 1px 0 #fff
+  font-size: 12px
+  text-transform: uppercase
+  border-radius: 3px
+  font-weight: bold
+  color: #676767
+  &.green
+    background-color: #39c36d
+    color: #fff
+.padding
+  padding: 20px
 
 @import 'partials/layout'
