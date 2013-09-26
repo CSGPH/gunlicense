@@ -7,6 +7,7 @@ Gunlicense::Application.routes.draw do
 
   resources :gun_owners
   resources :uploads
+  resources :sessions
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

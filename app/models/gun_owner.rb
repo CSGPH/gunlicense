@@ -59,6 +59,15 @@ class GunOwner < ActiveRecord::Base
     SMS.send_message!({:to => mobile_number, :from => "CSG", :text => "Your firearm license is expired!"})
   end
 
+  def authenticate(serial_number)
+    gun = Gun.find_by_serial_number(serial_number)
+    unless gun.nil?
+      gun.gun_owner
+    else
+      nil
+    end
+  end
+
   private
 
   def self.open_spreadsheet(file)
