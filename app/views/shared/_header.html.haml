@@ -1,20 +1,19 @@
-.navbar.navbar-fixed-top
-  .navbar-inner
-    .container
-      %button.btn.btn-navbar{ "data-toggle" => "collapse", "data-target" => ".nav-collapse" }
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to "GLIDE", root_url, :class => "brand"
-      .nav-collapse.collapse
-        - if current_user
-          %ul.nav
-            %li= link_to "Home", admin_dashboard_path
-          %ul.nav.pull-right
-            %li= link_to "Upload", new_admin_upload_path
-            %li= link_to "Unmapped Addresses", unmapped_addresses_admin_dashboard_path
-            %li
-              - if user_signed_in?
-                = link_to "Logout", destroy_user_session_path, :method => :delete
-              - else
-                = link_to "Login", new_user_session_path
+.top-menu
+  .container
+    %ul.menu.left
+      %li
+        %strong
+          = link_to "F.A.L.", root_url
+    %ul.menu.right
+      - if current_user
+     
+        %li= link_to "Home", admin_dashboard_path
+     
+        %li= link_to "Upload", new_admin_upload_path
+        %li= link_to "Unmapped Addresses", unmapped_addresses_admin_dashboard_path
+        %li
+          - if user_signed_in?
+            = link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'logout'
+          - else
+            = link_to "Login", new_user_session_path
+

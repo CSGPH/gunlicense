@@ -1,20 +1,18 @@
-.container
-  .row
-    .span12
-      .hero-unit
-        %h2
-          The easiest way to renew your gun license online
-        %p
-          This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
-      .container
-        .row
-          .span4
-            %form.form-horizontal.form-large
-              %fieldset
-                %label
-                  Enter your gun serial number
-                %input{ :type => "text" }
-                %button.btn.btn-primary.btn-full{ :type => "submit" }
-                  Next
+.hero-unit
+  .container
+    %h1
+      The easiest way to renew your gun license online
+    %p
+      This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+    %form.main-form
+      %fieldset
+        %label
+          %strong
+            Enter your gun serial number
+        %input.large.no-border{ :type => "text" }
+        %button.button.large.green{ :type => "submit" }
+          Next
+%button.button.green{ :type => "submit" }
+  Next
 
 
