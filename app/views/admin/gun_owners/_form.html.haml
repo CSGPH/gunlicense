@@ -1,20 +1,26 @@
 %h3
 
   Update user
-- if @gun_owner.errors.any?
-  = pluralize(@gun_owner.errors.count, 'error')
-  = @gun_owner.errors.full_messages.each do |msg|
-    = msg
-= form_for @gun_owner do |f|
-  / %fieldset
-  /   = label_tag(:picture, 'Photo')
-  /   = file_field_tag(:picture)
+= simple_form_for(@gun_owner, html: {class: 'form'}) do |f|
+  - if @gun_owner.errors.any?
+    = pluralize(@gun_owner.errors.count, 'error')
+    - @gun_owner.errors.full_messages.each do |msg|
+      = msg
+
   %fieldset
     = f.label :name
     = f.text_field :name, :class => "input-xxlarge"
   %fieldset
     = f.label :address
-    = f.text_field :address, :class => "input-xxlarge"
+    = f.text_field :address , :class => "input-xxlarge"
+    / = f.text_field :city , :class => "input-large"
+    %select
+      %option{ :selected => "selected", :disabled => "disabled" }
+        Select a city
+      %option
+        Cebu
+      %option
+        Mandaue
     .muted
       %small
         House #, Street, Baranggay, City
