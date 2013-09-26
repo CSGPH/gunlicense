@@ -11,6 +11,10 @@ Gunlicense::Application.routes.draw do
     end
   end
 
+  namespace :owner do
+    resource :dashboard
+  end
+
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 end
