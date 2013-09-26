@@ -6,13 +6,13 @@ Gunlicense::Application.routes.draw do
   namespace :admin do
     resources :gun_owners
     resources :uploads
-    resource  :dashboard do
+    resource  :dashboard, :controller => 'dashboard' do
       get 'unmapped_addresses'
     end
   end
 
   namespace :owner do
-    resource :dashboard
+    resource :dashboard, :controller => 'dashboard'
   end
 
   require 'sidekiq/web'
