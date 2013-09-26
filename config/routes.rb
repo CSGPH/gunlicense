@@ -3,10 +3,17 @@ Gunlicense::Application.routes.draw do
 
   root 'home#index'
 
-  get 'unmapped_addresses', :controller => :home, :action => :unmapped_addresses
+  namespace :admin do
+    resources :gun_owners
+    resources :uploads
+    resource  :dashboard do
+      get 'unmapped_addresses'
+    end
+  end
 
-  resources :gun_owners
-  resources :uploads
+  namespace :owner do
+    resource :dashboard
+  end
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

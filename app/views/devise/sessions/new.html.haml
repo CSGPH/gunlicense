@@ -3,18 +3,18 @@
   = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form" }) do |f|
     %fieldset
       = f.label :login
-      
+
       = f.text_field :login, :autofocus => true
     %fieldset
       = f.label :password
-      
+
       = f.password_field :password
     - if devise_mapping.rememberable?
       %fieldset
         %label.checkbox
           = f.check_box :remember_me
           Remember me
-        
+
     %fieldset
       = f.submit "Sign in", :class => "btn"
   = render "devise/shared/links"
