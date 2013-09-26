@@ -55,7 +55,7 @@ class GunOwner < ActiveRecord::Base
   end
 
   def notify_expired!
-    SMS.send_message!({:to => mobile_number, :from => "CSG", :text => "Your firearm license is expired!"})
+    SMS.send_message!({:to => mobile_number, :from => "FAL", :text => "Your firearm license is expired!"})
   end
 
   def authenticate(serial_number)
