@@ -27,6 +27,9 @@ gem 'font-awesome-rails'
 # login
 gem 'devise'
 
+#forms
+gem 'simple_form'
+
 # files
 gem 'roo'
 gem 'rubyzip', '< 1.0.0'
