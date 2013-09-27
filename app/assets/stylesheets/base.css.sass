@@ -1,7 +1,12 @@
-@import 'partials/skeleton'
-@import 'partials/buttons'
-@import 'partials/forms'
-@import 'font-awesome'
+@import "partials/skeleton"
+@import "partials/buttons"
+@import "partials/forms"
+@import "font-awesome"
+@import "http://fonts.googleapis.com/css?family=Sintony:700"
+
+$baseColor: #474747
+$heroBgColor: #4fafd7
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
   margin: 0
   padding: 0
@@ -41,10 +46,12 @@ table
 
 body
   background: #fff
-  font: 14px / 21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
-  color: #474747
+  font: 14px / 24px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: $baseColor
   -webkit-font-smoothing: antialiased
   -webkit-text-size-adjust: 100%
+p
+  margin: 0 0 10px 0
 a
   cursor: pointer
   text-decoration: none
@@ -54,18 +61,21 @@ strong
 h1,h2,h3,h4,h5
   font-weight: bold
 h1
-  font-size: 48px
+  font-size: 38px
   line-height: 1
   margin: 0 0 10px 0
 h3
   font-size: 18px
 .hero-unit
-  background-color: #4fafd7
+  text-align: center
+  background-color: $heroBgColor
   padding: 60px 0
   color: #fff
   font-size: 18px
-
-  
+  h1
+    font-family: 'Sintony', sans-serif
+.content
+  padding: 20px 0  
 .top-menu
   background: #383C3F
   a
@@ -94,8 +104,45 @@ h3
     float: right
 
 .main-form
-  padding: 40px 0 0 0
+  display: inline-block
   
+  border-radius: 5px
+  
+  padding: 0 20px 20px
+  margin-top: 50px
+  border: 1px solid #fff
+  label
+    strong
+      top: -13px
+      display: inline-block
+      background-color: $heroBgColor
+      margin-bottom: 5px
+      position: relative
+      padding: 0 10px
+.notification
+  border-radius: 5px
+  overflow: hidden
+  .notification-head
+    padding: 5px 10px
+    font-weight: bold
+  .notification-body
+    padding: 5px 10px
+  &.info
+    background-color: #f2f0e1
+    .notification-head
+      background-color: #6dc77c
+      color: #fff
+.home-content
+  border-radius: 10px
+  border: 3px solid #d9d9d9
+  background-color: #f5f5f5
+  
+.content-box
+  padding: 20px
+  h3
+    font-size: 16px
+    margin-bottom: 5px
+
 .map_container
   border: none
   width: auto
@@ -108,7 +155,8 @@ h3
 .user-info
   li
     margin: 7px 0
-  
+
+
 .pagination
   margin: 20px 0
   > span, em, a
