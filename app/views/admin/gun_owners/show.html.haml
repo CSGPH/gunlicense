@@ -8,60 +8,59 @@
       %li
         = @gun_owner.name
 
-.content
-  .container
-    .profile-group.clearfix
-      .image-upload-group
-        .profile-image
-          %img
-        .profile-image-actions
-          %a
-            change
-      %ul.user-info
-        %li
-          %h3
-            = @gun_owner.name
-        %li
-          #{@gun_owner.address}, #{@gun_owner.city}
-        %li
-          .label.green
-            Private Employee
-        %li
-          %a.button.labeled{ :href => edit_admin_gun_owner_path(@gun_owner) } 
-            %i.icon-pencil.icon.left
-            edit
-          
-.content
-  .map-container
-    = gmaps4rails(@json)
-  .container
-    .row
-      .span12
-        %table.table.table-hover
-          %thead
-            %tr
-              %th
-                Kind / Make / Model
-              %th
-                Serial #
-              %th
-                Date Issued
-              %th
-                Expiry Date
 
-          %tbody
-            - @guns.each do |gun|
-              %tr
-                %td
-                  %strong
-                    %a
-                      #{gun.kind} #{gun.make} #{gun.caliber} #{gun.model}
-                %td
-                  #{ gun.serial_number }
-                %td
-                  #{gun.issued_date}
-                %td
-                  #{gun.expiry_date}
-                %td
-                  %a
-                    Edit
+.container
+  .profile-group.clearfix
+    .image-upload-group
+      .profile-image
+        %img
+      .profile-image-actions
+        %a
+          change
+    %ul.user-info
+      %li
+        %h3
+          = @gun_owner.name
+      %li
+        #{@gun_owner.address}, #{@gun_owner.city}
+      %li
+        .label.green
+          Private Employee
+      %li
+        %a.button.labeled{ :href => edit_admin_gun_owner_path(@gun_owner) } 
+          %i.icon-pencil.icon.left
+          edit
+          
+
+.map-container
+  = gmaps4rails(@json)
+.container
+  .content
+    %table.table.table-hover
+      %thead
+        %tr
+          %th
+            Kind / Make / Model
+          %th
+            Serial #
+          %th
+            Date Issued
+          %th
+            Expiry Date
+
+      %tbody
+        - @guns.each do |gun|
+          %tr
+            %td
+              %strong
+                %a
+                  #{gun.kind} #{gun.make} #{gun.caliber} #{gun.model}
+            %td
+              #{ gun.serial_number }
+            %td
+              #{gun.issued_date}
+            %td
+              #{gun.expiry_date}
+            %td
+              %a
+                Edit
