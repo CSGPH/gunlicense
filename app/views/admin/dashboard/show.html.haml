@@ -46,35 +46,34 @@
       expired licenses
 
 .container
-  
-    
   = will_paginate @guns
+.container
+  .content
+    %table.table.table-hover.user-table-list
+      %thead
+        %tr
+          %th.span8
+            Name
+          %th
+            Kind / Make / Model
+          %th
+            Serial Number
+          %th
+            Expiry date
+      %tbody
+        - @guns.each do |g|
+          %tr{ :class => "#{"warning" if g.expired?}" }
+            %td.span8
+              %strong
+                = link_to g.gun_owner.name, admin_gun_owner_path(g.gun_owner)
+              %div
+                %small= g.gun_owner.full_address
+            %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
+            %td= g.serial_number
+            %td
+              - if g.expired?
+                %i.icon-warning-sign.icon-warning
+              = g.expiry_date
 
-  %table.table.table-hover.user-table-list
-    %thead
-      %tr
-        %th.span8
-          Name
-        %th
-          Kind / Make / Model
-        %th
-          Serial Number
-        %th
-          Expiry date
-    %tbody
-      - @guns.each do |g|
-        %tr{ :class => "#{"warning" if g.expired?}" }
-          %td.span8
-            %strong
-              = link_to g.gun_owner.name, admin_gun_owner_path(g.gun_owner)
-            %div
-              %small= g.gun_owner.full_address
-          %td #{g.kind} #{g.make} #{g.caliber} #{g.model}
-          %td= g.serial_number
-          %td
-            - if g.expired?
-              %i.icon-warning-sign.icon-warning
-            = g.expiry_date
 
-
-  = will_paginate @guns
+    = will_paginate @guns
