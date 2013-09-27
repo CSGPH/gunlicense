@@ -9,7 +9,7 @@ class Admin::UploadsController < ApplicationController
     @upload = Upload.create upload_params
     if @upload
       UploadWorker.perform_async(@upload.id)
-      redirect_to root_url, notice: "Users Imported"
+      redirect_to admin_dashboard_path, notice: "Users Imported"
     end
   end
 
