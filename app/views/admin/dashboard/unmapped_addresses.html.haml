@@ -1,5 +1,5 @@
 %ul
   - @gun_owners.each do |g|
-    %li= link_to g.name, gun_owner_path(g)
+    %li= link_to g.name, admin_gun_owner_path(g)
 
 = will_paginate @gun_owners
