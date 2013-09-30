@@ -1,9 +1,6 @@
 .top-menu
   .container
-    %ul.menu.left
-      %li
-        %strong
-          = link_to "F.A.L.", root_url
+    = link_to " ", root_url, :class => "logo"
     %ul.menu.right
       - if current_user
         %li= link_to "Home", admin_dashboard_path
