@@ -8,12 +8,16 @@ Gunlicense::Application.routes.draw do
     resources :uploads
     resource  :dashboard, :controller => 'dashboard' do
       get 'unmapped_addresses'
+      get 'search'
     end
   end
 
   namespace :owner do
     resource :dashboard, :controller => 'dashboard'
+
   end
+  
+
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

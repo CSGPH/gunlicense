@@ -1,7 +1,10 @@
 class Admin::DashboardController < ApplicationController
   before_filter :authenticate_user!
-
+  def search
+    @gun_owners = Gun.search(params[:search_key]).paginate(:page => params[:page])
+  end
   def show
+
     @guns = Gun.includes(:gun_owner).paginate(:page => params[:page])
     @json = GunOwner.where(:id => @guns.collect(&:gun_owner_id).uniq).to_gmaps4rails
   end
