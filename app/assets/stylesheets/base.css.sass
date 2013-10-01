@@ -50,6 +50,7 @@ body
   color: $baseColor
   -webkit-font-smoothing: antialiased
   -webkit-text-size-adjust: 100%
+
 p
   margin: 0 0 10px 0
 a
@@ -66,6 +67,12 @@ h1
   margin: 0 0 10px 0
 h3
   font-size: 18px
+a.logo
+  display: inline-block
+  float: left
+  line-height: 2.6
+  padding: 5px 15px
+  font-weight: bold
 .hero-unit
   text-align: center
   background-color: $heroBgColor
@@ -105,20 +112,20 @@ h3
 
 .main-form
   display: inline-block
-  
   border-radius: 5px
   
   padding: 0 20px 20px
   margin-top: 50px
   border: 1px solid #fff
   label
-    strong
-      top: -13px
-      display: inline-block
-      background-color: $heroBgColor
-      margin-bottom: 5px
-      position: relative
-      padding: 0 10px
+    top: -13px
+    display: table
+    margin: 0 auto
+    background-color: $heroBgColor
+    margin-bottom: 5px
+    position: relative
+    padding: 0 10px
+    font-weight: bold
 .notification
   border-radius: 5px
   overflow: hidden
@@ -155,7 +162,6 @@ h3
 .user-info
   li
     margin: 7px 0
-
 
 .pagination
   margin: 20px 0
@@ -198,7 +204,6 @@ h3
   display: inline-block
   background: #e1e1e1
   padding: 1px 7px
-  text-shadow: 0 1px 0 #fff
   font-size: 12px
   text-transform: uppercase
   border-radius: 3px
