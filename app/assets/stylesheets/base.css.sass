@@ -1,4 +1,5 @@
 @import "modules/colors"
+@import "modules/variables"
 @import "partials/skeleton"
 @import "partials/buttons"
 @import "partials/forms"
@@ -82,7 +83,9 @@ a.logo
   h1
     font-family: 'Sintony', sans-serif
 .content
-  padding: 20px 0  
+  padding: 20px 0
+  &.bordered
+    border-bottom: 1px solid #e1e1e1  
 .top-menu
   background: #383C3F
   a
