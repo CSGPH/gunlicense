@@ -1,4 +1,6 @@
 @import "modules/colors"
+@import "modules/variables"
+
 #error_explanation
   color: $errorColor
 form
@@ -16,8 +18,12 @@ form
     margin-bottom: 10px
   label
     display: block
+    font-weight: bold
   h3.form-title
     margin-bottom: 15px
+  .form-section
+    padding: 20px 0
+    border-bottom: 1px solid #e1e1e1
 input[type=text], input[type=password], select, input[type=file]
   border-radius: 3px
   padding: 6px 7px
@@ -28,6 +34,12 @@ input[type=text], input[type=password], select, input[type=file]
   display: inline-block
   font-size: 14px
   min-width: 220px
+  &.short
+    min-width: $short
+    width: $short
+  &.med
+    min-width: $medium
+    width: $medium
 input[type=text], input[type=password]
   &.large
     padding: 11px
@@ -40,7 +52,11 @@ select
   border: 1px solid #ccc
   height: 30px
   line-height: 30px
-
+  &.short
+    min-width: $short
 label
   &.block
     display: block
+
+.help-inline
+  font-size: 12px

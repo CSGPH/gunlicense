@@ -1,0 +1,63 @@
+.container
+  .row
+    .content
+      %form.form-inline
+        .form-section
+          %h3 Create and Verify Profile
+          %p
+            Please verify if this is your information. This will serve as your profile in renewing your gun license
+          .clearfix
+          %fieldset
+            %label
+              First Name
+            %input{ :type => "text" }
+          %fieldset
+            %label
+              Middle Name
+            %input{ :type => "text" }
+          %fieldset
+            %label
+              Last Name
+            %input{ :type => "text" }
+
+        .form-section
+          %h3 Address Information
+          %p
+            Please provide the correct information of your address
+          %fieldset
+            %label
+              House Number/Apt
+            %input{ :type => "text" }
+          %fieldset
+            %label
+              Subd/Street
+            %input{ :type => "text" }
+          %fieldset
+            %label
+              Baranggay
+            %input{ :type => "text" }
+          %fieldset
+            %label
+              City
+            %input{ :type => "text" }
+          %fieldset
+            %label
+              Province
+            %input{ :type => "text" }
+
+        .form-section
+          %h3
+            Verification
+          %p
+            We will send you your verification number to complete this registration
+          %fieldset
+            %label
+              Mobile Number
+            %input{ :type => "text" }
+        .form-section
+          %p.help-inline
+            Your information is stored securely and will be used to verify your gun license information
+          %fieldset
+            %input.green.large{ :type => "submit", :value => "Create Account" }
+          
+      
